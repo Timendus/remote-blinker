@@ -23,6 +23,7 @@ Get yourself a Raspberry Pi. Install Raspbian Stretch Lite on it. Boot it up and
 Then, git clone this repo onto your Pi and run the installer:
 
 ```bash
+$ sudo apt-get install git
 $ git clone git@github.com:Timendus/remote-blinker.git
 $ cd remote-blinker
 $ ./installOnRaspberryPi.sh
