@@ -1,27 +1,20 @@
 const exec = require('child_process').exec;
-const socket = require('socket.io-client')('http://192.168.175.103:3003');
+const socket = require('socket.io-client')('http://'+process.env.npm_package_config_server+':'+process.env.npm_package_config_port);
 
 const lightsOff = function() {
   console.log("Turning the lights off");
-  exec("echo '1-1' > /sys/bus/usb/drivers/usb/unbind");  
+  exec("echo '1-1' > /sys/bus/usb/drivers/usb/unbind");
 }
 
 const lightsOn = function() {
   console.log("Turning the lights back on!");
-  exec("echo '1-1' > /sys/bus/usb/drivers/usb/bind");  
+  exec("echo '1-1' > /sys/bus/usb/drivers/usb/bind");
 }
 
 socket.on('connect', function () {
-	console.log('Connected to server, waiting for buttonsmashing');
-	socket.on('blink', function() {
-		console.log('Button was smashed!');
-
-		// Do a little dance
-		lightsOn();
-		setTimeout(lightsOff, 1000);
-		setTimeout(lightsOn, 2000);
-		setTimeout(lightsOff, 3000);
-	});
+  console.log('Connected to server, waiting for some button smashing!');
+  socket.on('lightsOff', lightsOff);
+  socket.on('lightsOn',  lightsOn );
 });
 
 lightsOff();

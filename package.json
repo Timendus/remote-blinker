@@ -7,5 +7,9 @@
   "scripts": {
     "client": "node client.js",
     "server": "node server.js"
+  },
+  "config": {
+    "server": "localhost",
+    "port": "3003"
   }
 }
