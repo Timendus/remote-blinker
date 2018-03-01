@@ -11,17 +11,19 @@ const lightsOn = function() {
   exec("echo '1-1' > /sys/bus/usb/drivers/usb/bind");  
 }
 
-lightsOff();
-setTimeout(lightsOn, 1000);
-setTimeout(lightsOff, 2000);
-setTimeout(lightsOn, 3000);
-
-/**
-socket.on('connect', function (inSock) {
+socket.on('connect', function () {
 	console.log('Connected to server, waiting for buttonsmashing');
-	inSock.on('blink', function() {
+	socket.on('blink', function() {
 		console.log('Button was smashed!');
+
+		// Do a little dance
+		lightsOn();
+		setTimeout(lightsOff, 1000);
+		setTimeout(lightsOn, 2000);
+		setTimeout(lightsOff, 3000);
 	});
 });
-**/
+
+lightsOff();
+console.log("Waiting for server...");
 
