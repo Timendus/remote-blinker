@@ -1,0 +1,11 @@
+{
+	"name": "remote-blinker",
+	"version": "0.0.1",
+	"dependencies": {
+		"socket.io": "~2.0.4"
+	},
+	"scripts": {
+		"client": "sudo nodejs client.js"
+	}
+}
+
