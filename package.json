@@ -5,7 +5,7 @@
     "socket.io": "~2.0.4"
   },
   "scripts": {
-    "client": "sudo nodejs client.js",
+    "client": "node client.js",
     "server": "node server.js"
   }
 }

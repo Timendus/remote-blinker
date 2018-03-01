@@ -1,5 +1,5 @@
 const exec = require('child_process').exec;
-const socket = require('./node_modules/socket.io/node_modules/socket.io-client')('http://192.168.175.103:3003');
+const socket = require('socket.io-client')('http://192.168.175.103:3003');
 
 const lightsOff = function() {
   console.log("Turning the lights off");
