@@ -23,3 +23,8 @@ nvm install node
 
 # Install the package dependencies
 npm install
+
+# Install the boot script
+sudo cp bootscript.sh /etc/init.d/remote-blinker
+sudo chmod 755 /etc/init.d/remote-blinker
+sudo update-rc.d remote-blinker defaults
