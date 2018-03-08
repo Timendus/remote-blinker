@@ -10,4 +10,4 @@ serverSocket.on('connection', function(clientSocket) {
   }, 10000);
 });
 
-console.log("Waiting for connections...");
+console.log("Waiting for connections on port "+process.env.npm_package_config_port+"...");

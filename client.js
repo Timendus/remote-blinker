@@ -18,5 +18,5 @@ socket.on('connect', function () {
 });
 
 lightsOff();
-console.log("Waiting for server...");
+console.log("Waiting for server on "+process.env.npm_package_config_server+':'+process.env.npm_package_config_port+"...");
 
